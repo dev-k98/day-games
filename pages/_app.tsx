@@ -4,7 +4,7 @@ import 'tailwindcss/tailwind.css';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <div className="relative flex flex-column">
+    <div className="col-span-1 flex flex-column min-h-screen">
       <Plugins />
       <Component {...pageProps} />
     </div>

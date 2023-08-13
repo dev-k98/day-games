@@ -1,27 +1,46 @@
-import Link from "next/link";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import backArrow from "../public/arrow-round.svg";
+import Image from "next/image";
+import { PATHS } from '../utils/constants';
 
 type Props = {};
 
 const Plugins = (props: Props) => {
   const router = useRouter();
+  const [currentPage, setCurrentPage] = useState<string>();
+  useEffect(() => {
+    setCurrentPage(router.pathname);
+  }, [router]);
 
-  const handleClick = () => {
-    router.push("/");
+  const handleClick = (target: string) => {
+    router.push(target);
   };
 
   return (
-    <div className="fixed flex justify-start flex-col min-h-full w-1/5 min-w-fit bg-neutral-800 p-3 text-neutral-100">
-      {router.pathname !== "/" && (
-        <button className="bg-green-700 btn btn-primary rounded-full p-2 left-0 font-sans" onClick={handleClick}>
-          Home <img></img>
+    <div className="flex flex-col w-1/5 min-w-fit max-w-xs bg-reseda_green pr-2 pt-1">
+      {currentPage !== "/" ? (
+        <button
+          className="animate-slide-in bg-champagne_pink text-reseda_green flex items-center gap-2 btn btn-primary rounded-r-lg p-1"
+          onClick={() => handleClick(PATHS.home)}
+        >
+          <Image className="w-8 left-0 pl-2" src={backArrow} alt="Back" />
+          <span className="font-sans font-bold text-xl">Home</span>
         </button>
+      ) : (
+        <span className="p-1 left-0 font-sans font-bold text-xl text-center bg-sage text-white">Projects</span>
       )}
-      <div></div>
-      <Link href="/operations" id="operations">
-        Operations page
-      </Link>
+      <div className="transition-all flex justify-start flex-col p-2">
+        <button
+          className={`rounded py-1 ${
+            currentPage === PATHS.operations && "bg-sage text-white"
+          }`}
+          name="/operations"
+          onClick={() => handleClick("/operations")}
+        >
+          Operations page
+        </button>
+      </div>
     </div>
   );
 };

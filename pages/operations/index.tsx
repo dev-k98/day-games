@@ -48,27 +48,27 @@ const Operations = (props: Props) => {
     });
   };
   return (
-    <div className="w-screen h-screen flex justify-center items-center flex-col">
-      <div className="h-56 w-96 flex justify-center items-center flex-col bg-reseda_green rounded-lg">
+    <div className="w-screen h-screen flex justify-center items-center flex-col bg-custom_french_gray">
+      <div className="h-56 w-96 flex justify-center items-center flex-col bg-custom_slate_gray rounded-lg shadow-inner shadow-custom_seasalt">
         <Box>
           <input
-            className="h-10 w-10 bg-champagne_pink text-center outline-none border-none hover:bg-desert_sand focus:bg-desert_sand "
+            className="font-Lato h-10 w-10 bg-custom_seasalt text-center outline-none border-none hover:bg-custom_anti_flash_white  focus:bg-custom_french_gray "
             value={input[0] || ""}
             onChange={(e) => handleChange(e, 0)}
           />
           <div
-            className="h-10 w-10 flex justify-center items-center text-4xl text-white"
+            className="font-Lato h-10 w-10 flex justify-center items-center text-4xl text-white"
             ref={ref}
           >
             {sign}
           </div>
           <input
-            className="h-10 w-10 bg-champagne_pink text-center outline-none border-none hover:bg-desert_sand focus:bg-desert_sand"
+            className="font-Lato h-10 w-10 bg-custom_seasalt text-center outline-none border-none hover:bg-custom_anti_flash_white focus:bg-custom_french_gray"
             value={input[1] || ""}
             onChange={(e) => handleChange(e, 1)}
           />
         </Box>
-        <Box style="gap-2 text-white text-2xl">
+        <Box style="gap-2 text-custom_eerie_black text-2xl font-Lato">
           <Button callback={handleOperation}>+</Button>
           <Button callback={handleOperation}>-</Button>
           <Button callback={handleOperation}>*</Button>
@@ -77,13 +77,13 @@ const Operations = (props: Props) => {
         <Box>
           <Box>
             <button
-              className="h-10 w-20 text-center outline-none border-none bg-buff rounded-lg"
+              className="h-10 w-20 text-center outline-none border-none bg-custom_eerie_black text-custom_seasalt rounded-lg"
               onClick={handleEqual}
             >
               Total
             </button>
           </Box>
-          <Box style="flex items-center text-white text-xl">
+          <Box style="flex items-center text-custom_eerie_black text-xl">
             <h2>{total}</h2>
           </Box>
         </Box>

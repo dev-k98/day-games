@@ -2,6 +2,7 @@ export const PATHS = {
   home: "/",
   operations: "/operations",
   analyzer: "/text-analyzer",
+  password: "/password-gen",
 };
 
 export const ANALYTICS_INITIAL_STATE = {
@@ -11,6 +12,18 @@ export const ANALYTICS_INITIAL_STATE = {
   paragraphs: 0,
   pronouns: 0,
 };
+
+export const INITIAL_STATE_OPTIONS = {
+  uppercase: false,
+  lowercase: false,
+  numbers: false,
+  spChars: false,
+};
+
+export const UPPERCASE_CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+export const LOWERCASE_CHARS = "abcdefghijklmnopqrstuvwxyz"
+export const NUMBERS = "0123456789";
+export const SYMBOLS = "!@#$%&*~?"
 
 export const PRONOUNS = [
   "i",

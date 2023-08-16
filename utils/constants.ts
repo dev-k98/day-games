@@ -3,3 +3,43 @@ export const PATHS = {
   operations: "/operations",
   analyzer: "/text-analyzer",
 };
+
+export const ANALYTICS_INITIAL_STATE = {
+  words: 0,
+  characters: 0,
+  sentences: 0,
+  paragraphs: 0,
+  pronouns: 0,
+};
+
+export const PRONOUNS = [
+  "i",
+  "you",
+  "he",
+  "she",
+  "it",
+  "we",
+  "you",
+  "they",
+  "me",
+  "you",
+  "him",
+  "her",
+  "it",
+  "us",
+  "you",
+  "them",
+  "mine",
+  "yours",
+  "his",
+  "hers",
+  "its",
+  "ours",
+  "yours",
+  "theirs",
+  "yourself",
+  "himself",
+  "herself",
+  "ourselves",
+  "yourselves",
+];
